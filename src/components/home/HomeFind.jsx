@@ -6,6 +6,7 @@ import {
   imgPoster,
   imgPosterComment,
 } from "../../style/home/homeStyle";
+import { Link } from "react-router-dom";
 
 const HomeFind = () => {
   const [paintings, setPaintings] = useState([]);
@@ -55,15 +56,21 @@ const HomeFind = () => {
           {paintings.slice(0, 4).map((painting, index) => (
             <Grid item lg={3} md={3} xs={12} sm={6} key={painting._id}>
               <Stack spacing={2}>
-                <img
-                  style={{ width: "240px", height: "267px" }}
-                  src={`http://216.250.9.208:1498/uploads/paintings/${painting.coverImageName.filename}`}
-                  alt={
-                    painting.coverImageName
-                      ? painting.coverImageName.originalname
-                      : ""
-                  }
-                />
+                <Link to={`/image-detail/${painting._id}`}>
+                  <img
+                    style={{
+                      width: "240px",
+                      height: "267px",
+                      cursor: "pointer",
+                    }}
+                    src={`http://216.250.9.208:1498/uploads/paintings/${painting.coverImageName.filename}`}
+                    alt={
+                      painting.coverImageName
+                        ? painting.coverImageName.originalname
+                        : ""
+                    }
+                  />
+                </Link>
                 <Typography sx={imgPoster}>
                   {staticTexts[index].imgPoster}
                 </Typography>

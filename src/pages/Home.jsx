@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <Stack spacing={10}>
+      <Stack spacing={10} mt={10}>
         <HomeFind />
         <WeekendNews />
       </Stack>

@@ -17,7 +17,7 @@ const CategoryMenu = ({ category }) => {
   const handleMouseLeave = () => {
     closeTimeout = setTimeout(() => {
       setAnchorEl(null);
-    }, 1000);
+    }, 2000);
   };
 
   return (
